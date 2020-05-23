@@ -24,9 +24,9 @@ class myCallback(Callback):
           #    self.model.stop_training = True
             file='/root/ws/output.txt' 
             var=logs.get('accuracy')
-#            with open(file, 'w') as filetowrite:
-#                filetowrite.write(np.array2string(var))
-            np.savetxt(file,np.asarray([var]))    
+            with open(file, 'w') as filetowrite:
+                filetowrite.write(np.array2string(var))
+#            np.savetxt(file,np.asarray([var]))    
            
             #print(logs.get('accuracy'),file=f)
             #.close()
