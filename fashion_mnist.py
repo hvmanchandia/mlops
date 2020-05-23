@@ -63,7 +63,7 @@ model.add(Dense(10, activation='softmax'))
 # compiling the sequential model
 model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
 
-epoch=5
+epoch=10
 # training the model for 5 epochs
 history = model.fit(
             X_train,Y_train, epochs=epoch,callbacks=[callbacks]
