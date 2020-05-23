@@ -22,7 +22,7 @@ class myCallback(Callback):
           #if(logs.get('accuracy')>0.998):
           #    print("\nReached 99.8% accuracy so cancelling training!")
           #    self.model.stop_training = True
-            file='/mlops_project/files/output.txt' 
+            file='/root/ws/output.txt' 
             var=logs.get('accuracy')
             with open(file, 'w') as filetowrite:
                 filetowrite.write(np.array2string(var))
