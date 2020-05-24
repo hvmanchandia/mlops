@@ -17,19 +17,16 @@ from keras.callbacks import Callback
 from sklearn.metrics import accuracy_score
 import numpy as np
 
+#class for writing the accuracy in a file
 class myCallback(Callback):
       def on_epoch_end(self, epoch, logs={}):
-          #if(logs.get('accuracy')>0.998):
-          #    print("\nReached 99.8% accuracy so cancelling training!")
-          #    self.model.stop_training = True
+          
             file='/root/ws/output.txt' 
             var=logs.get('accuracy')
             with open(file, 'w') as filetowrite:
                 filetowrite.write(np.array2string(var))
-#            np.savetxt(file,np.asarray([var]))    
-           
-            #print(logs.get('accuracy'),file=f)
-            #.close()
+
+
 
 
 callbacks = myCallback()
@@ -63,6 +60,7 @@ model.add(Dense(10, activation='softmax'))
 # compiling the sequential model
 model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
 
+#hyperparameters
 epoch=5
 # training the model for 5 epochs
 history = model.fit(
